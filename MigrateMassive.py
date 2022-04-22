@@ -33,7 +33,7 @@ def getMaxId():
     x = df.iloc[0,0]
 
 
-def download_file(i):
+def download_file(i): #download file to local drive
     startID = str(i)
     apiUrl = 'https://<API endpoint>'
     apiKey = '<API Key>'
@@ -72,7 +72,7 @@ def download_file(i):
     data_file.close()
     os.remove(file1)
 
-def uploadToCloudStorage(i):
+def uploadToCloudStorage(i): # upload file from local drive to BigQuery
     file2 = "...Table\\Files\\FileName_" + str(i) + ".csv"
     storage_client = storage.Client.from_service_account_json(key_path)
     bucket = storage_client.get_bucket('<YOUR BUCKET>')
